@@ -13,24 +13,28 @@ runs:
   steps:
     - name: Install plugins
       run: |
-        if type -q ${{ inputs.plugin-manager }}
+        set -l plugin_manager ${{ inputs.plugin-manager }}
+
+        if type -q $plugin_manager
             set plugin_manager_installed yes
         else
             set plugin_manager_installed no
         end
 
-        switch ${{ inputs.plugin-manager }}
-            case fisher
+        set
+
+        switch $plugin_manager
+            case 'fisher'
                 if test "$plugin_manager_installed" = "no"
                     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
                 end
-            case oh-my-fish
+            case 'oh-my-fish'
                 if test "$plugin_manager_installed" = "no"
                     curl -L https://get.oh-my.fish > omf-install
                     chmod u+x omf-install
                     ./omf-install -y --noninteractive
                 end
-            case plug.fish
+            case 'plug.fish'
                 if test "$plugin_manager_installed" = "no"
                     curl -sSL https://git.io/fish-plug | source && plug install kidonng/fish-plug
                 end
