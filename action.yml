@@ -11,30 +11,33 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Check for plugin manager
-      run: |
-        if type -q ${{ inputs.plugin-manager }}
-            echo "plugin_manager_installed=true" >> $GITHUB_ENV
-        else
-            echo "plugin_manager_installed=false" >> $GITHUB_ENV
-        end
-      shell: fish {0}
-    - name: Install plugin manager
-      uses: fish-shop/install-plugin-manager@main
-      with:
-        plugin-manager: ${{ inputs.plugin-manager }}
-      if: ${{ env.plugin_manager_installed == 'false' }}
-      shell: fish {0}
     - name: Install plugins
       run: |
-        set -gx TERM xterm-256color
+        if type -q ${{ inputs.plugin-manager }}
+            set plugin_manager_installed yes
+        else
+            set plugin_manager_installed no
+        end
 
         switch ${{ inputs.plugin-manager }}
             case fisher
-                fisher install ${{ inputs.plugins }}
+                if test "$plugin_manager_installed" = "no"
+                    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+                end
             case oh-my-fish
-                omf install ${{ inputs.plugins }}
+                if test "$plugin_manager_installed" = "no"
+                    curl -L https://get.oh-my.fish > omf-install
+                    chmod u+x omf-install
+                    ./omf-install -y --noninteractive
+                end
             case plug.fish
-                plug install ${{ inputs.plugins }}
+                if test "$plugin_manager_installed" = "no"
+                    curl -sSL https://git.io/fish-plug | source && plug install kidonng/fish-plug
+                end
+            case '*'
+                echo "Unknown command: '${{ inputs.plugin-manager }}' >&2; and exit 1
         end
+
+        ${{ inputs.plugin-manager }} install ${{ inputs.plugins }}
+
       shell: fish {0}
