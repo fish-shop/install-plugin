@@ -13,6 +13,7 @@ runs:
   steps:
     - name: Install plugins
       run: |
+        set -l plugin_manager ${{ inputs.plugin-manager }}
         switch $plugin_manager
             case 'fisher'
                 if test (type -q fisher) $status -ne 0
@@ -33,6 +34,6 @@ runs:
                 end
                 plug install ${{ inputs.plugins }}
             case '*'
-                echo "Unrecognised plugin manager: '${{ inputs.plugin-manager }}'" >&2; and exit 1
+                echo "Unrecognised plugin manager: '$plugin_manager'" >&2; and exit 1
         end
       shell: fish {0}
