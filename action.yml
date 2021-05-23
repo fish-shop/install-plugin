@@ -32,6 +32,7 @@ runs:
                     curl -L https://get.oh-my.fish > omf-install
                     chmod u+x omf-install
                     ./omf-install -y --noninteractive
+                    source ~/.config/fish/conf.d/omf.fish
                 end
                 omf install ${{ inputs.plugins }}
             case 'plug.fish'
