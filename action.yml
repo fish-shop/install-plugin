@@ -9,11 +9,11 @@ inputs:
   plugins:
     description: 'The plugin(s) to install; this value is passed verbatim as an argument to the install command of the chosen plugin manager and the values supported may differ between tools'
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Check for plugin manager
       run: |
-        if type -q $program
+        if type -q ${{ inputs.plugin-manager }}
             echo "plugin_manager_installed=true" >> $GITHUB_ENV
         else
             echo "plugin_manager_installed=false" >> $GITHUB_ENV
