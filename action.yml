@@ -20,10 +20,10 @@ runs:
         end
       shell: fish {0}
     - name: Install plugin manager
-      if: ${{ env.plugin_manager_installed == 'false' }}
       uses: fish-shop/install-plugin-manager@main
       with:
         plugin-manager: ${{ inputs.plugin-manager }}
+      if: ${{ env.plugin_manager_installed == 'false' }}
       shell: fish {0}
     - name: Install plugins
       run: |
