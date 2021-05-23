@@ -28,7 +28,7 @@ jobs:
 
 The plugin manager will be installed only if not already present. If your workflow job contains multiple `install-plugin` actions that use the same plugin manager then only the first action will install the plugin manager.
 
-If you wish to interact directly with the plugin manager for more complex workflows, consider using the [fish-shop/install-plugin-manager](https://github.com/fish-shop/install-plugin-manager) action instead. This action will install a plugin manager but without installing any plugin(s) at the same time.
+If you wish to install a plugin manager without also installing any plugin(s) at the same time—for more complex workflows—consider using the [fish-shop/install-plugin-manager](https://github.com/fish-shop/install-plugin-manager) action instead.
 
 ## Supported plugin managers
 
