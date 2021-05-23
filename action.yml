@@ -39,7 +39,7 @@ runs:
                     curl -sSL https://git.io/fish-plug | source && plug install kidonng/fish-plug
                 end
             case '*'
-                echo "Unknown command: '${{ inputs.plugin-manager }}' >&2; and exit 1
+                echo "Unknown command: '${{ inputs.plugin-manager }}'" >&2; and exit 1
         end
 
         ${{ inputs.plugin-manager }} install ${{ inputs.plugins }}
