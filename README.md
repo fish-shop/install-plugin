@@ -10,7 +10,7 @@ This action requires the [fish shell](https://fishshell.com). You can install it
 
 ## Usage
 
-Add a suitable `uses` step to your GitHub [workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) and specify the plugin manager and plugins to be installed by providing values for the `plugin-manager` and `plugins` inputs respectively:
+Add a suitable `uses` step to your GitHub [workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) and specify the plugin manager and plugin(s) to be installed by providing values for the `plugin-manager` and `plugins` inputs respectively:
 
 ```yaml
 jobs:
