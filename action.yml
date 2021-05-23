@@ -21,8 +21,6 @@ runs:
             set plugin_manager_installed no
         end
 
-        set
-
         switch $plugin_manager
             case 'fisher'
                 if test "$plugin_manager_installed" = "no"
