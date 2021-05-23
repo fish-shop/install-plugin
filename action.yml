@@ -13,6 +13,8 @@ runs:
   steps:
     - name: Install plugins
       run: |
+        set -gx TERM xterm-256color
+
         set -l plugin_manager ${{ inputs.plugin-manager }}
         switch $plugin_manager
             case 'fisher'
