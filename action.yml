@@ -13,22 +13,14 @@ runs:
   steps:
     - name: Install plugins
       run: |
-        set -l plugin_manager ${{ inputs.plugin-manager }}
-
-        if type -q $plugin_manager
-            set plugin_manager_installed yes
-        else
-            set plugin_manager_installed no
-        end
-
         switch $plugin_manager
             case 'fisher'
-                if test "$plugin_manager_installed" = "no"
+                if test (type -q fisher) $status -ne 0
                     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
                 end
                 fisher install ${{ inputs.plugins }}
             case 'oh-my-fish'
-                if test "$plugin_manager_installed" = "no"
+                if test (type -q omf) $status -ne 0
                     curl -L https://get.oh-my.fish > omf-install
                     chmod u+x omf-install
                     ./omf-install -y --noninteractive
@@ -36,11 +28,11 @@ runs:
                 end
                 omf install ${{ inputs.plugins }}
             case 'plug.fish'
-                if test "$plugin_manager_installed" = "no"
+                if test (type -q plug) $status -ne 0
                     curl -sSL https://git.io/fish-plug | source && plug install kidonng/fish-plug
                 end
                 plug install ${{ inputs.plugins }}
             case '*'
-                echo "Unknown command: '${{ inputs.plugin-manager }}'" >&2; and exit 1
+                echo "Unrecognised plugin manager: '${{ inputs.plugin-manager }}'" >&2; and exit 1
         end
       shell: fish {0}
