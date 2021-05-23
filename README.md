@@ -10,7 +10,7 @@ This action requires the [fish shell](https://fishshell.com). You can install it
 
 ## Usage
 
-Add a suitable `uses` step to your GitHub [workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) and specify the plugin manager and plugins to be installed by providing values for the `plugin-manager` and `plugins` inputs respectively:
+Add a suitable `uses` step to your GitHub [workflow](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) and specify the plugin manager and plugin(s) to be installed by providing values for the `plugin-manager` and `plugins` inputs respectively:
 
 ```yaml
 jobs:
@@ -24,11 +24,11 @@ jobs:
           plugins: marcransome/pond
 ```
 
-:warning: The value provided for the `plugins` input is passed unchanged as an argument to the `install` command of the specified plugin manager. In most cases this means multiple plugins may be installed at the same time, however this is dependent upon the plugin manager being used. Refer to the official documentation for the chosen plugin manager for details (see [Supported plugin managers](#supported-plugin-managers) for a list of supported tools).
+The value provided for the `plugins` input is passed _unchanged_ as an argument to the `install` command of the specified plugin manager. In most cases this means multiple plugins may be installed at the same time, however this is dependent upon the plugin manager being used. Refer to the official documentation for the chosen plugin manager for details (see [Supported plugin managers](#supported-plugin-managers) for a list of supported tools and links to their respective project repositories).
 
 The plugin manager will be installed only if not already present. If your workflow job contains multiple `install-plugin` actions that use the same plugin manager then only the first action will install the plugin manager.
 
-If you wish to interact directly with the plugin manager for more complex workflows, consider using the [fish-shop/install-plugin-manager](https://github.com/fish-shop/install-plugin-manager) action instead. This action will install a plugin manager but without installing any plugin(s) at the same time.
+If you wish to install a plugin manager without also installing any plugin(s) at the same time, consider using the [fish-shop/install-plugin-manager](https://github.com/fish-shop/install-plugin-manager) action instead.
 
 ## Supported plugin managers
 
