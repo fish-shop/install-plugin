@@ -22,8 +22,8 @@ runs:
     - name: Install plugin manager
       if: ${{ env.plugin_manager_installed == 'false' }}
       uses: fish-shop/install-plugin-manager@main
-        with:
-          plugin-manager: ${{ inputs.plugin-manager }}
+      with:
+        plugin-manager: ${{ inputs.plugin-manager }}
       shell: fish {0}
     - name: Install plugins
       run: |
