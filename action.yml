@@ -1,0 +1,38 @@
+name: 'fish-shop/install-plugin'
+description: 'A GitHub action for installing fish shell plugins'
+branding:
+  icon: 'arrow-down'
+  color: 'blue'
+inputs:
+  plugin-manager:
+    description: 'The name of the fish shell plugin manager to use'
+  plugins:
+    description: 'The plugin(s) to install; this value is passed verbatim as an argument to the 'install' command of the chosen plugin manager and the values supported may differ between tools'
+runs:
+  using: "composite"
+  steps:
+    - name: Check for plugin manager
+      run: |
+        if type -q $program
+            echo "plugin_manager_installed=true" >> $GITHUB_ENV
+        else
+            echo "plugin_manager_installed=false" >> $GITHUB_ENV
+        end
+    - name: Install plugin manager
+      if: ${{ env.plugin_manager_installed == 'false' }}
+      uses: fish-shop/install-plugin-manager@main
+        with:
+          plugin-manager: ${{ inputs.plugin-manager }}
+    - name: Install plugins
+      run: |
+        set -gx TERM xterm-256color
+
+        switch ${{ inputs.plugin-manager }}
+            case fisher
+                fisher install ${{ inputs.plugins }}
+            case oh-my-fish
+                omf install ${{ inputs.plugins }}
+            case plug.fish
+                plug install ${{ inputs.plugins }}
+        end
+      shell: fish {0}
