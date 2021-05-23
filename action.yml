@@ -26,20 +26,20 @@ runs:
                 if test "$plugin_manager_installed" = "no"
                     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
                 end
+                fisher install ${{ inputs.plugins }}
             case 'oh-my-fish'
                 if test "$plugin_manager_installed" = "no"
                     curl -L https://get.oh-my.fish > omf-install
                     chmod u+x omf-install
                     ./omf-install -y --noninteractive
                 end
+                omf install ${{ inputs.plugins }}
             case 'plug.fish'
                 if test "$plugin_manager_installed" = "no"
                     curl -sSL https://git.io/fish-plug | source && plug install kidonng/fish-plug
                 end
+                plug install ${{ inputs.plugins }}
             case '*'
                 echo "Unknown command: '${{ inputs.plugin-manager }}'" >&2; and exit 1
         end
-
-        ${{ inputs.plugin-manager }} install ${{ inputs.plugins }}
-
       shell: fish {0}
