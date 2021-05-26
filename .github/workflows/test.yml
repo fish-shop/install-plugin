@@ -18,6 +18,7 @@ jobs:
           - ubuntu-latest
         package-manager:
           - fisher
+          - oh-my-fish
           - plug.fish
     runs-on: ${{ matrix.os }}
     steps:
