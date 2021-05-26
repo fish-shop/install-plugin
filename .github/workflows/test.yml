@@ -16,7 +16,7 @@ jobs:
         os:
           - macos-latest
           - ubuntu-latest
-        package-manager:
+        plugin-manager:
           - fisher
           - oh-my-fish
           - plug.fish
@@ -29,13 +29,13 @@ jobs:
         if: matrix.plugin-manager != 'oh-my-fish'
         uses: fish-shop/install-plugin@1.0.0
         with:
-          plugin-manager: ${{ matrix.package-manager }}
+          plugin-manager: ${{ matrix.plugin-manager }}
           plugins: marcransome/pond
       - name: Install plugin
         if: matrix.plugin-manager == 'oh-my-fish'
         uses: fish-shop/install-plugin@1.0.0
         with:
-          plugin-manager: ${{ matrix.package-manager }}
+          plugin-manager: ${{ matrix.plugin-manager }}
           plugins: https://github.com/marcransome/pond
       - name: Check plugin installed
         run: type -q pond
