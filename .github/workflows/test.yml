@@ -26,7 +26,7 @@ jobs:
       - name: Install fish shell
         uses: fish-actions/install-fish@v1.1.0
       - if: matrix.plugin-manager != 'oh-my-fish' && github.event_name == 'pull_request'
-        name: Install plugin using <username>/<repo> name and action from pull-request
+        name: Install plugin using <username>/<repo> name and action from pull-request branch
         uses: ./.
         with:
           plugin-manager: ${{ matrix.plugin-manager }}
@@ -38,7 +38,7 @@ jobs:
           plugin-manager: ${{ matrix.plugin-manager }}
           plugins: marcransome/pond
       - if: matrix.plugin-manager == 'oh-my-fish' && github.event_name == 'pull_request'
-        name: Install plugin using URL and action from pull-request
+        name: Install plugin using URL and action from pull-request branch
         uses: ./.
         with:
           plugin-manager: ${{ matrix.plugin-manager }}
