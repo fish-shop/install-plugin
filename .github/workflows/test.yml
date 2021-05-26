@@ -1,0 +1,42 @@
+name: tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+    types:
+      - published
+jobs:
+  tests:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+        plugin-manager:
+          - fisher
+          - oh-my-fish
+          - plug.fish
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install fish shell
+        uses: fish-actions/install-fish@v1.1.0
+      - name: Install plugin
+        if: matrix.plugin-manager != 'oh-my-fish'
+        uses: fish-shop/install-plugin@1.0.0
+        with:
+          plugin-manager: ${{ matrix.plugin-manager }}
+          plugins: marcransome/pond
+      - name: Install plugin
+        if: matrix.plugin-manager == 'oh-my-fish'
+        uses: fish-shop/install-plugin@1.0.0
+        with:
+          plugin-manager: ${{ matrix.plugin-manager }}
+          plugins: https://github.com/marcransome/pond
+      - name: Check plugin installed
+        run: type -q pond
+        shell: fish {0}
