@@ -1,0 +1,35 @@
+name: tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+    types:
+      - published
+jobs:
+  tests:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+        package-manager:
+          - fisher
+          - oh-my-fish
+          - plug.fish
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install fish shell
+        uses: fish-actions/install-fish@v1.1.0
+      - name: Install Pond plugin with Fisher
+        uses: fish-shop/install-plugin@1.0.0
+        with:
+          plugin-manager: ${{ matrix.package-manager }}
+          plugins: marcransome/pond
+      - name: Check Pond plugin present
+        run: type -q pond
+        shell: fish {0}
