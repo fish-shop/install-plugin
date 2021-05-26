@@ -18,18 +18,24 @@ jobs:
           - ubuntu-latest
         package-manager:
           - fisher
-          - oh-my-fish
           - plug.fish
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: Install fish shell
         uses: fish-actions/install-fish@v1.1.0
-      - name: Install Pond plugin with Fisher
+      - name: Install plugin
+        if: matrix.plugin-manager != 'oh-my-fish'
         uses: fish-shop/install-plugin@1.0.0
         with:
           plugin-manager: ${{ matrix.package-manager }}
           plugins: marcransome/pond
-      - name: Check Pond plugin present
+      - name: Install plugin
+        if: matrix.plugin-manager == 'oh-my-fish'
+        uses: fish-shop/install-plugin@1.0.0
+        with:
+          plugin-manager: ${{ matrix.package-manager }}
+          plugins: https://github.com/marcransome/pond
+      - name: Check plugin installed
         run: type -q pond
         shell: fish {0}
