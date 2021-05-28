@@ -1,4 +1,4 @@
-name: tests
+name: Automated tests
 on:
   push:
     branches:
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install fish shell
-        uses: fish-actions/install-fish@v1.1.0
+        uses: fish-actions/install-fish@v1
       - if: matrix.plugin-manager != 'oh-my-fish' && github.event_name == 'pull_request'
         name: Install plugin using <username>/<repo> name and action from pull-request branch
         uses: ./.
