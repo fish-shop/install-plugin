@@ -54,6 +54,13 @@ The recommended pattern is `vX` (e.g. `v1`). This will ensure that the version o
 
 Using a `main` branch reference in your workflow is _not_ recommended as this branch may include breaking changes intended for the next major release.
 
+## Other GitHub actions
+
+A number of related composite actions are also available from the [fish-shop](https://github.com/fish-shop) 🐟. Check them out:
+
+* [fish-shop/syntax-check](https://github.com/fish-shop/syntax-check) - A GitHub action for syntax checking fish shell files
+* [fish-shop/install-plugin-manager](https://github.com/fish-shop/install-plugin-manager) - A GitHub action for installing a fish shell plugin manager
+
 ## License
 `fish-shop/install-plugin` is provided under the terms of the [MIT License](http://opensource.org/licenses/mit-license.php).
 
