@@ -24,7 +24,7 @@ runs:
                 fisher install ${{ inputs.plugins }}
             case 'oh-my-fish'
                 if test (type -q omf) $status -ne 0
-                    curl -L https://get.oh-my.fish > omf-install
+                    curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install
                     chmod u+x omf-install
                     ./omf-install -y --noninteractive
                     source ~/.config/fish/conf.d/omf.fish
