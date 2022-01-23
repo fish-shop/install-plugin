@@ -2,7 +2,7 @@ name: 'fish-shop/install-plugin'
 description: 'A GitHub action for installing fish shell plugins'
 branding:
   icon: 'arrow-down'
-  color: 'blue'
+  color: 'green'
 inputs:
   plugin-manager:
     description: 'The name of the fish shell plugin manager to use'
