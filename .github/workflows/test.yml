@@ -29,13 +29,13 @@ jobs:
         uses: fish-actions/install-fish@v1
       - if: matrix.plugin-manager != 'oh-my-fish'
         name: Install plugin using <username>/<repo> name
-        uses: ./.
+        uses: ./
         with:
           plugin-manager: ${{ matrix.plugin-manager }}
           plugins: marcransome/pond
       - if: matrix.plugin-manager == 'oh-my-fish'
         name: Install plugin using GitHub URL
-        uses: ./.
+        uses: ./
         with:
           plugin-manager: ${{ matrix.plugin-manager }}
           plugins: https://github.com/marcransome/pond
