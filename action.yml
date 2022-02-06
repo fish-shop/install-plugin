@@ -11,31 +11,18 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - uses: fish-shop/install-plugin-manager@v1
+      with:
+        plugin-manager: ${{ inputs.plugin-manager }}
     - name: Install plugins
       run: |
         set -gx TERM xterm-256color
-
-        set -l plugin_manager ${{ inputs.plugin-manager }}
-        switch $plugin_manager
+        switch ${{ inputs.plugin-manager }}
             case 'fisher'
-                if test (type -q fisher) $status -ne 0
-                    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-                end
                 fisher install ${{ inputs.plugins }}
             case 'oh-my-fish'
-                if test (type -q omf) $status -ne 0
-                    curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install
-                    chmod u+x omf-install
-                    ./omf-install -y --noninteractive
-                    source ~/.config/fish/conf.d/omf.fish
-                end
                 omf install ${{ inputs.plugins }}
             case 'plug.fish'
-                if test (type -q plug) $status -ne 0
-                    curl -sSL https://git.io/fish-plug | source && plug install kidonng/fish-plug
-                end
                 plug install ${{ inputs.plugins }}
-            case '*'
-                echo "Unrecognised plugin manager: '$plugin_manager'" >&2; and exit 1
         end
       shell: fish {0}
