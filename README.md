@@ -6,7 +6,7 @@ A GitHub action for installing [fish shell](https://fishshell.com) plugins.
 
 ## Prerequisites
 
-This action requires the [fish shell](https://fishshell.com). You can install using the [fish-actions/install-fish](https://github.com/fish-actions/install-fish) action.
+This action requires the [fish shell](https://fishshell.com). You can install it using the [fish-actions/install-fish](https://github.com/fish-actions/install-fish) action.
 
 ## Usage
 
