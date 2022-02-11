@@ -60,6 +60,7 @@ A number of related composite actions are also available from the [fish-shop](ht
 
 * [fish-shop/syntax-check](https://github.com/fish-shop/syntax-check) - A GitHub action for syntax checking fish shell files
 * [fish-shop/install-plugin-manager](https://github.com/fish-shop/install-plugin-manager) - A GitHub action for installing a fish shell plugin manager
+* [fish-shop/run-fishtape-tests](https://github.com/fish-shop/run-fishtape-tests) - A GitHub action for running Fishtape tests
 
 ## License
 `fish-shop/install-plugin` is provided under the terms of the [MIT License](http://opensource.org/licenses/mit-license.php).
