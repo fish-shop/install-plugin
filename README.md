@@ -1,6 +1,6 @@
 # fish-shop/install-plugin
 
-[![Tests](https://img.shields.io/github/workflow/status/fish-shop/install-plugin/tests?color=brightgreen&label=tests)](https://github.com/fish-shop/install-plugin/actions) [![Issues](https://img.shields.io/github/issues/fish-shop/install-plugin)](https://github.com/fish-shop/install-plugin/issues) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/fish-shop/install-plugin/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](http://opensource.org/licenses/mit-license.php) [![fish](https://img.shields.io/badge/fish-3.2.2-blue)](https://fishshell.com)
+[![Tests](https://img.shields.io/github/workflow/status/fish-shop/install-plugin/tests?color=brightgreen&label=tests)](https://github.com/fish-shop/install-plugin/actions) [![Issues](https://img.shields.io/github/issues/fish-shop/install-plugin)](https://github.com/fish-shop/install-plugin/issues) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/fish-shop/install-plugin/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/mit-license.php) [![fish](https://img.shields.io/badge/fish-3.2.2-blue)](https://fishshell.com)
 
 A GitHub action for installing [fish shell](https://fishshell.com) plugins.
 
@@ -63,7 +63,7 @@ A number of related composite actions are also available from the [fish-shop](ht
 * [fish-shop/run-fishtape-tests](https://github.com/fish-shop/run-fishtape-tests) - A GitHub action for running Fishtape tests
 
 ## License
-`fish-shop/install-plugin` is provided under the terms of the [MIT License](http://opensource.org/licenses/mit-license.php).
+`fish-shop/install-plugin` is provided under the terms of the [MIT License](https://opensource.org/licenses/mit-license.php).
 
 ## Contact
 Email me at [marc.ransome@fidgetbox.co.uk](mailto:marc.ransome@fidgetbox.co.uk) or tweet [@marcransome](http://www.twitter.com/marcransome).
