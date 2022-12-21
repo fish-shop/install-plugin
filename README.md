@@ -2,7 +2,7 @@
 
 # fish-shop/install-plugin
 
-[![Tests](https://img.shields.io/github/workflow/status/fish-shop/install-plugin/tests?color=brightgreen&label=tests)](https://github.com/fish-shop/install-plugin/actions) [![Issues](https://img.shields.io/github/issues/fish-shop/install-plugin)](https://github.com/fish-shop/install-plugin/issues) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/fish-shop/install-plugin/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/mit-license.php) [![fish](https://img.shields.io/badge/fish-3.2.2-blue)](https://fishshell.com)
+[![Tests](https://img.shields.io/github/actions/workflow/status/fish-shop/install-plugin/test.yml?branch=main&color=brightgreen&label=tests)](https://github.com/fish-shop/install-plugin/actions) [![Issues](https://img.shields.io/github/issues/fish-shop/install-plugin)](https://github.com/fish-shop/install-plugin/issues) [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen.svg)](https://github.com/fish-shop/install-plugin/network/dependencies) [![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/mit-license.php) [![fish](https://img.shields.io/badge/fish-3.2.2-blue)](https://fishshell.com)
 
 A GitHub action for installing [fish shell](https://fishshell.com) plugins.
 
