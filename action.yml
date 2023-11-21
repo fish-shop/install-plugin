@@ -24,7 +24,5 @@ runs:
                 fisher install ${{ inputs.plugins }}
             case 'oh-my-fish'
                 omf install ${{ inputs.plugins }}
-            case 'plug.fish'
-                plug install ${{ inputs.plugins }}
         end
       shell: fish {0}
