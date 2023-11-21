@@ -22,7 +22,6 @@ jobs:
         plugin-manager:
           - fisher
           - oh-my-fish
-          - plug.fish
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
