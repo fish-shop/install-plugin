@@ -56,7 +56,8 @@ Use one of the following patterns when specifying the version reference for this
 | `vX.Y`   | `v2.1`    | the latest `v2.1.*` release including bug fixes                        |
 | `vX.Y.Z` | `v2.1.0`  | the `v2.1.0` release only                                              |
 
-The recommended pattern is `vX` (e.g. `v2`). This will ensure that the version of the action used in your workflow includes the latest non-breaking changes and bug fixes, and guarantees compatibility with previous versions of that major release number.
+> [!TIP]
+> The recommended pattern is `vX` (e.g. `v2`). This will ensure that the version of the action used in your workflow includes the latest non-breaking changes and bug fixes, and guarantees compatibility with previous versions of that major release number.
 
 Using a `main` branch reference in your workflow is _not_ recommended as this branch may include breaking changes intended for the next major release.
 
