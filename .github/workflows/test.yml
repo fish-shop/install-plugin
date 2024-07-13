@@ -25,7 +25,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Install fish shell
         uses: fish-shop/install-fish-shell@10b4065b2fb7c15c5a2cad50ea1a7ef99dd6dc16 # v1.0.0
       - if: matrix.plugin-manager != 'oh-my-fish'
