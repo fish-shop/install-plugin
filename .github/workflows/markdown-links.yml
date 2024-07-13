@@ -14,4 +14,4 @@ on:
   workflow_dispatch:
 jobs:
   markdown-links:
-    uses: fish-shop/workflows/.github/workflows/markdown-links.yml@94cae15f031fd9bab2242bad6318f62f3334688b # v1.9.0
+    uses: fish-shop/workflows/.github/workflows/markdown-links.yml@0d032d552619809e6c6e8480c63e1ef0110c5f25 # v1.9.1
