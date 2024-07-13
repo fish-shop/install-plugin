@@ -10,7 +10,7 @@ A GitHub action for installing [fish shell](https://fishshell.com) plugins.
 
 ## Prerequisites
 
-This action requires the [fish shell](https://fishshell.com). You can install it using the [fish-actions/install-fish](https://github.com/fish-actions/install-fish) action.
+This action requires the [fish shell](https://fishshell.com). You can install it using the [fish-shop/install-fish-shell](https://github.com/fish-shop/install-fish-shell) action.
 
 ## Usage
 
@@ -65,6 +65,7 @@ Using a `main` branch reference in your workflow is _not_ recommended as this br
 
 A number of related composite actions are also available from the [fish-shop](https://github.com/fish-shop) 🐟. Check them out:
 
+* [fish-shop/install-fish-shell](https://github.com/fish-shop/install-fish-shell) - A GitHub action for installing fish shell
 * [fish-shop/syntax-check](https://github.com/fish-shop/syntax-check) - A GitHub action for syntax checking fish shell files
 * [fish-shop/install-plugin-manager](https://github.com/fish-shop/install-plugin-manager) - A GitHub action for installing a fish shell plugin manager
 * [fish-shop/run-fishtape-tests](https://github.com/fish-shop/run-fishtape-tests) - A GitHub action for running Fishtape tests
