@@ -27,7 +27,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
       - name: Install fish shell
-        uses: fish-actions/install-fish@d6d9d26231a15f8d9a6b3e74b3db45512440e3e8 # v1.1.0
+        uses: fish-shop/install-fish-shell@10b4065b2fb7c15c5a2cad50ea1a7ef99dd6dc16 # v1.0.0
       - if: matrix.plugin-manager != 'oh-my-fish'
         name: Install plugin using <username>/<repo> name
         uses: ./
