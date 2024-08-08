@@ -32,7 +32,6 @@ runs:
             case 'oh-my-fish'
                 omf install $plugins
             case '*'
-                echo "Unknown plugin manager: $plugin_manager"
-                return 1
+                echo "Unrecognised plugin manager: '$plugin_manager'" >&2; and exit 1
         end
       shell: fish {0}
