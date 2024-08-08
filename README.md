@@ -28,7 +28,11 @@ jobs:
           plugins: marcransome/pond
 ```
 
-The value provided for the `plugins` input is passed _unchanged_ as an argument to the `install` command of the specified plugin manager. In most cases this means multiple plugins may be installed at the same time, however this is dependent upon the plugin manager being used. Refer to the official documentation for the chosen plugin manager for details (see [Supported plugin managers](#supported-plugin-managers) for a list of supported tools and links to their respective project repositories).
+> [!TIP]
+> The `plugins` input supports multiple space-separated plugin names/URLs. The exact format is dependent upon the plugin manager being used and you should refer to the plugin manager's documentation for additional information (see [Supported plugin managers](#supported-plugin-managers)).
+
+> [!NOTE]
+> For additional safety, the inputs `plugin-manager` and `plugins` are handled internally using intermediary environment variables and escaped to mitigate the risk of [script injections](https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions#understanding-the-risk-of-script-injections).
 
 The plugin manager will be installed only if not already present. If your workflow job contains multiple `install-plugin` actions that use the same plugin manager then only the first action will install the plugin manager.
 
