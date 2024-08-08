@@ -17,12 +17,22 @@ runs:
       with:
         plugin-manager: ${{ inputs.plugin-manager }}
     - name: Install plugins
+      env:
+        PLUGIN_MANAGER: ${{ inputs.plugin-manager }}
+        PLUGINS: ${{ inputs.plugins }}
       run: |
         set -gx TERM xterm-256color
-        switch ${{ inputs.plugin-manager }}
+
+        set plugin_manager (string escape --no-quoted -- $PLUGIN_MANAGER)
+        set plugins (string split --no-empty ' ' -- $PLUGINS | string escape --no-quoted)
+
+        switch $plugin_manager
             case 'fisher'
-                fisher install ${{ inputs.plugins }}
+                fisher install $plugins
             case 'oh-my-fish'
-                omf install ${{ inputs.plugins }}
+                omf install $plugins
+            case '*'
+                echo "Unknown plugin manager: $plugin_manager"
+                return 1
         end
       shell: fish {0}
