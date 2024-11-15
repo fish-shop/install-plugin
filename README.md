@@ -45,10 +45,11 @@ The following table lists the supported plugin managers and the corresponding `p
 | Plugin manager                                         | `plugin-manager` value |
 |--------------------------------------------------------|------------------------|
 | [Fisher](https://github.com/jorgebucaran/fisher)       | `fisher`               |
-| [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) | `oh-my-fish`           |
-| ~~[plug.fish](https://github.com/kidonng/plug.fish)~~  | ~~`plug.fish`~~[^1]    |
+| [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) | `oh-my-fish` [^1]      |
+| ~~[plug.fish](https://github.com/kidonng/plug.fish)~~  | ~~`plug.fish`~~[^2]    |
 
-[^1]: `plug.fish` support was removed in `v2.0.0` due to functional changes made in recent versions of this plugin manager.
+[^1]: [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) is currently [unmaintained](https://github.com/oh-my-fish/oh-my-fish/issues/947) and support for this plugin manager may be removed in a future update.
+[^2]: [plug.fish](https://github.com/kidonng/plug.fish) support was removed in `v2.0.0` due to upstream changes that are generally incompatible with the use of this plugin manager in the context of GitHub Actions.
 
 ## Action versions
 
