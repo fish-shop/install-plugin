@@ -11,4 +11,4 @@ jobs:
     name: Release Tags
     permissions:
       contents: write
-    uses: fish-shop/workflows/.github/workflows/release-tags.yml@9c642aa903b9f138dce217fd88e9e9743421c042 # v1.14.19
+    uses: fish-shop/workflows/.github/workflows/release-tags.yml@9ce460dc45b24d21ba41ea70166c791cfb3c26c8 # v1.14.21
