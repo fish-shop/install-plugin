@@ -13,7 +13,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - uses: fish-shop/install-plugin-manager@66a8dea0f26c4b68f02976b7850e0b864489e5c5 # v2.3.117
+    - uses: fish-shop/install-plugin-manager@9128189c7f91a40050cce85819fbcc0b3fbf47aa # v2.3.118
       with:
         plugin-manager: ${{ inputs.plugin-manager }}
     - name: Install plugins
